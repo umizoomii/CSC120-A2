@@ -23,9 +23,13 @@ class ResaleShop:
     # What methods will you need?
     
     #print inventory, buy, refurbish, sell
+        
+    #prints inventory and assigns item id
     def print_inventory(self):
-         for computer in self.computers:
-              print(computer)
+        counter = 0
+        for computer in self.computers:
+              counter += 1
+              print("Item ID: " + str(counter) + ", " + str(computer))
 
 
     #buy computer
@@ -47,7 +51,7 @@ class ResaleShop:
         if self.computers[itemID] in self.computers:
             del self.computers[itemID]
             print("Item " + str(itemID) + " sold! New Inventory: ")
-            print(self.computers)
+            self.print_inventory() #print to see if computer is sold
         else:   
             print("Item ID does not exist.")
     
@@ -60,6 +64,7 @@ class ResaleShop:
 def main():
         
         #setting up resale shop
+        print(" ")
         umas_shop = ResaleShop("Uma's Resale Shop")
         print(umas_shop)
         
@@ -70,7 +75,6 @@ def main():
 
         cool_computer = Computer("Windows", "Processor type", 20, 20, "Operating", 1900, 5000)
         umas_shop.buy(cool_computer)
-        #Computer1.buy(computer1) #from computer document
         
         #refurbish computer:
         #oldcomputer = Computer("ancient technology", "Processor type", 20, 20, "Operating", 1800, 5000)
