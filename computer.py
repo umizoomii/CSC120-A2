@@ -23,14 +23,14 @@ class Computer:
         self.year_made = year
         self.price = cost
         
+    # What methods will you need? 
+
     #returns the inventory of the computers
     def __str__(self):
         return "Description: " + self.description + ", Processor type: " + self.processor_type + ", Hard drive capacity: " + str(self.hard_drive_capacity) + ", Memory:" + str(self.memory) + ", Operating system: " + self.operating_system + ", Year made: " + str(self.year_made) + ", Price: $" + str(self.price)
     #this might need to be moved to resale shop
     
-    # What methods will you need? 
-        
-   
+  
 
 
     #seeing if it will print computer attrubutes
@@ -40,7 +40,7 @@ def main():
     Computer2 = Computer("wowcomputer", "Microsoft", 12, 15, "idk", 2004, 5 )
     print(Computer1)
     print(Computer2)
-
     
+
 if __name__ == "__main__":
     main()

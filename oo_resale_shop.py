@@ -5,11 +5,12 @@ class ResaleShop:
 
     # What attributes will it need?
 
-    name: str
-    computers: list
+    name: str #shop needs a name!
+    computers: list #inventory
 
     # How will you set up your constructor?
     # Remember: in python, all constructors have the same name (__init__)
+   
    #initialize inventory
     def __init__(self, name):
         self.name = name
@@ -24,15 +25,16 @@ class ResaleShop:
     
     #print inventory, buy, refurbish, sell
         
-    #prints inventory and assigns item id
+    #prints inventory and assigns item ID
     def print_inventory(self):
-        counter = 0
+        counter = 0 #keep track of item ID number
         for computer in self.computers:
               counter += 1
-              print("Item ID: " + str(counter) + ", " + str(computer))
+              itemID = counter
+              print("Item ID: " + str(itemID) + ", " + str(computer))
 
 
-    #buy computer
+    #buy computer: working
     def buy(self, computer):
          print("Buying computer:")
          print(computer)
@@ -40,20 +42,23 @@ class ResaleShop:
          print("Done! Current inventory: ")
          self.print_inventory() #print inventory to see if it added computer
 
-    
+    #command question mark
     #refurbish computer: (some errors here)
-    #def refurbish(self, computer):
-    #    if int(self.computer["Year"]) < 2000:
-    #        int(self.computer["Price"]) == 0
+    def refurbish(self, computer):
+        #print("HIIIIII", computer.year_made)
+        if computer.year_made < 2000:
+            computer.price = 0
+            print(computer.price)
 
-    #sell computer: currently not working
+
+    #sell computer: working
     def sell(self, itemID):
         if self.computers[itemID] in self.computers:
             del self.computers[itemID]
             print("Item " + str(itemID) + " sold! New Inventory: ")
             self.print_inventory() #print to see if computer is sold
         else:   
-            print("Item ID does not exist.")
+            print("Error: Item ID does not exist.")
     
          
     #print inventory
@@ -69,7 +74,7 @@ def main():
         print(umas_shop)
         
         
-        #buy computers: seems to be working
+        #buy computer
         umas_comp = Computer("Uma's mac", "idk", 20, 20, "cool Operating system", 1900, 5000)
         umas_shop.buy(umas_comp)
 
@@ -77,15 +82,15 @@ def main():
         umas_shop.buy(cool_computer)
         
         #refurbish computer:
-        #oldcomputer = Computer("ancient technology", "Processor type", 20, 20, "Operating", 1800, 5000)
-        #umas_shop.refurbish(oldcomputer)
-        #print(oldcomputer)
+        oldcomputer = Computer("ancient technology", "Processor type", 20, 20, "Operating", 1800, 5000)
+        umas_shop.refurbish(oldcomputer)
+        print(oldcomputer)
        
         #sell computer
         print("Selling computer...")
         umas_shop.sell(1)
-        #print(umas_shop)
-        #print("Done!")
+        
+    
        
 if __name__ == "__main__":
     main()
