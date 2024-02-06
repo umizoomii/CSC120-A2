@@ -1,3 +1,5 @@
+
+#defining the class Computer
 class Computer:
 
     # What attributes will it need? ...added all attributes from main.py
@@ -25,13 +27,10 @@ class Computer:
         
     # What methods will you need? 
 
-    #returns the inventory of the computers
+    #returns the computer info in the correct format
     def __str__(self):
         return "Description: " + self.description + ", Processor type: " + self.processor_type + ", Hard drive capacity: " + str(self.hard_drive_capacity) + ", Memory:" + str(self.memory) + ", Operating system: " + self.operating_system + ", Year made: " + str(self.year_made) + ", Price: $" + str(self.price)
-    #this might need to be moved to resale shop
     
-  
-
 
     #seeing if it will print computer attrubutes
     #main
